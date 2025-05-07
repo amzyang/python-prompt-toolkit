@@ -289,7 +289,7 @@ class Application(Generic[_AppResult]):
         #: after "\x1b". This little timer will consider "\x1b" to be escape if
         #: nothing did follow in this time span.
         #: This seems to work like the `ttimeoutlen` option in Vim.
-        self.ttimeoutlen = 0.5  # Seconds.
+        self.ttimeoutlen = 0.05  # Seconds.
 
         #: Like Vim's `timeoutlen` option. This can be `None` or a float.  For
         #: instance, suppose that we have a key binding AB and a second key
@@ -298,7 +298,7 @@ class Application(Generic[_AppResult]):
         #: know what will follow. This timeout is the maximum amount of time
         #: that we wait until we call the handlers anyway. Pass `None` to
         #: disable this timeout.
-        self.timeoutlen = 1.0
+        self.timeoutlen = 0.1
 
         #: The `Renderer` instance.
         # Make sure that the same stdout is used, when a custom renderer has been passed.
